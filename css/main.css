@@ -1,0 +1,220 @@
+/* Reset CSS */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img, video, canvas, svg {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: hsl(235, 24%, 19%);
+  position: relative;
+}
+
+header {
+  background-color: hsl(235, 21%, 11%);
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  background-image: url("../images/bg-desktop-dark.jpg");
+  height: 20vh;
+}
+header .intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15rem;
+  color: white;
+  height: 5vh;
+}
+header .intro img {
+  width: 40px;
+  height: 40px;
+}
+@media (min-width: 768px) {
+  header {
+    background-image: url("../images/bg-desktop-light.jpg");
+  }
+  header .intro {
+    gap: 5rem;
+  }
+}
+
+main .task-container {
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 600px;
+}
+main .task-container .input-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: hsl(235, 21%, 11%);
+  color: white;
+  border: none;
+}
+main .task-container .input-div button {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 1px solid hsl(233, 11%, 84%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+main .task-container .input-div .todo-input {
+  background-color: hsl(235, 21%, 11%);
+  border: none;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+}
+main .task-container .input-div .todo-input::placeholder {
+  color: hsl(233, 11%, 84%);
+}
+@media (min-width: 768px) {
+  main .task-container .input-div {
+    padding: 1rem 3rem;
+  }
+}
+main .task-container .tasks {
+  display: grid;
+  max-height: 350px;
+  overflow-y: auto;
+}
+main .task-container .tasks .todos:first-child {
+  margin-top: 1rem;
+}
+main .task-container .tasks .todos {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+  background-color: hsl(235, 21%, 11%);
+  border: none;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  padding: 1rem;
+}
+main .task-container .tasks .todos .check, main .task-container .tasks .todos .del {
+  cursor: pointer;
+}
+main .task-container .tasks .todos .todoBtn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #f5f5f5;
+  background-color: transparent;
+}
+main .task-container .tasks .todos .check {
+  background-color: hsl(220, 98%, 61%);
+  background-image: url("../images/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+main .task-container .tasks .todos .del {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 1px solid hsl(233, 11%, 84%);
+  border-radius: 50%;
+  margin-left: auto;
+}
+main .task-container .tasks .todos.completed {
+  text-decoration: line-through;
+}
+main .task-container .tasks .todos:not(:last-child) {
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+main .task-container .task-info {
+  background-color: hsl(235, 21%, 11%);
+  border: none;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+main .task-container .task-info .filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+main .task-container .task-info .filters p {
+  transition: all 0.3s ease-in-out;
+}
+main .task-container .task-info .filters p:hover {
+  color: #0246cf;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  main .task-container .task-info {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  main .task-container .task-info .completed, main .task-container .task-info .items-left {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  main .task-container {
+    top: 300%;
+  }
+}/*# sourceMappingURL=main.css.map */

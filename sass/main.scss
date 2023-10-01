@@ -1,0 +1,195 @@
+@import 'reset';
+@import 'typography';
+@import 'colors';
+
+body{
+    font-family: $fontJosenif;
+    background-color: $dark-theme-bg;
+    position: relative;
+}
+
+header{
+    background-color: $very-dark-blue;
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    background-image: url('../images/bg-desktop-dark.jpg');
+    height: 20vh;
+
+    .intro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15rem;
+        color: white;
+        height: 5vh;
+
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    @media(min-width: 768px){
+        background-image: url('../images/bg-desktop-light.jpg');
+
+        .intro{
+            gap: 5rem;
+        }
+    }
+}
+
+main{
+    .task-container{
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 600px;
+        
+
+        .input-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: $very-dark-blue;
+            color: white;
+            border: none;
+    
+            button{
+                width: 20px;
+                height: 20px;
+                background-color: transparent;
+                border: 1px solid $light-grayish-blue;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+    
+            .todo-input{
+                background-color: $very-dark-blue;
+                border: none;
+                color: white;
+                font-family: $fontJosenif;
+                font-size: 1rem;
+                width: 100%;
+                outline: none;
+            }
+    
+            .todo-input::placeholder{
+                color: $light-grayish-blue;
+            }
+    
+            @media(min-width: 768px){
+                padding: 1rem 3rem;
+            }
+        }
+
+        .tasks{
+            display: grid;
+            max-height: 350px;
+            overflow-y: auto;
+
+            .todos:first-child{
+                margin-top: 1rem;
+            }
+
+            .todos{
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                cursor: pointer;
+
+                .check, .del{
+                    cursor: pointer;
+                }
+
+                .todoBtn{
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    border: 1px solid #f5f5f5;
+                    background-color: transparent;
+                }
+
+                .check{
+                    background-color: $bright-blue;
+                    background-image: url('../images/icon-check.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border: none;
+                }
+
+                .del{
+                    width: 20px;
+                    height: 20px;
+                    background-color: transparent;
+                    border: 1px solid $light-grayish-blue;
+                    border-radius: 50%;
+                    margin-left: auto;
+                }
+
+                background-color: $very-dark-blue;
+                border: none;
+                color: white;
+                font-family: $fontJosenif;
+                font-size: 1rem;
+                width: 100%;
+                outline: none;
+                padding: 1rem;    
+
+                &.completed{
+                    text-decoration: line-through;
+                }
+            }
+
+            .todos:not(:last-child){
+                border-bottom: 1px solid $light-grayish-blue;
+            }
+        }
+
+        .task-info{
+            background-color: $very-dark-blue;
+            border: none;
+            color: white;
+            font-family: $fontJosenif;
+            font-size: 1rem;
+            width: 100%;
+            outline: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+
+            .filters{
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+
+                p{
+                    transition: all 0.3s ease-in-out;
+                }
+
+                p:hover{
+                    color: darken($bright-blue, 20%);
+                    cursor: pointer;
+                }
+            }
+
+            @media(max-width: 600px){
+                margin-top: 1rem;
+                justify-content: center;
+                .completed, .items-left{
+                    display: none;
+                }
+            }
+        }
+
+        @media(max-width: 600px){
+            top: 300%;
+        }
+    }
+}
+

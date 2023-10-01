@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+$font-weights:(
+    "regular": 400,
+    "bold": 700
+);
+
+@function get-weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+}
+
+$fontJosenif: 'Josefin Sans', sans-serif;
